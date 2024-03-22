@@ -24,7 +24,7 @@
         <form action="https://formspree.io/f/xnqeqjeo" method="POST">
 
             <p>
-                <strong id="idwuihg">Bitte geben Sie hier ihre persönlichen Informationen an</strong>
+                <strong id="free">Bitte geben Sie hier ihre persönlichen Informationen an</strong>
             </p>
 
             <table class="blank">
@@ -58,12 +58,6 @@
                     <td class="blank"></td>
                 </tr>
 
-                <tr>
-                    <td>Telefon oder Handynummer<strong id="s">*</strong></td>
-                    <td id="w"><input required id="n" type="text" placeholder="0123456789" name="Telefonnummer"></td>
-                    <td class="blank"></td>
-                </tr>
-
             </table>
 
             <p>
@@ -83,115 +77,131 @@
                 </tr>
 
                 <tr>
-                    <td>Ätherische Öle Preisliste</td>
-                    <td class="anz"><input required value="0" id="aö" type="text" autocomplete="off" onkeyup="pö()" name="Ätherische Öle Preisliste"></td>
-                    <td>0.20</td>
-                    <td>0.033</td>
-                    <td><input readonly id="ÖGP" class="gpa" type="text" placeholder="0.00">€</td>
+                    <td id="w">Bestellblock</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Bestellblock" id="anzahlBestellblock" type="text" value="0" autocomplete="off" onkeyup="preisBestellblock()"></td>
+                    <td id="w">6.50</td>
+                    <td id="w">0.234</td>
+                    <td id="w"><input style="background-color: white;" id="bestellblockGesamtPreis" readonly class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
 
                 <tr>
-                    <td id="w">Bestellblock</td>
-                    <td id="w" class="anz"><input name="Bestellblock" id="ab" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pb()"></td>
-                    <td id="w">6.50</td>
-                    <td id="w">0.234</td>
-                    <td id="w"><input style="background-color: white;" id="BGP" readonly class="gpa" type="text" placeholder="0.00">€</td>
+                    <td>Notizblock</td>
+                    <td class="anz"><input name="Notizblock" id="anzahlNotizblock" type="text" value="0" autocomplete="off" onkeyup="preisNotizblock()"></td>
+                    <td>2.00</td>
+                    <td>0.140</td>
+                    <td><input readonly id="notizblockGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+
+                <tr>
+                    <td id="w">Putzmittel Katalog</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Putzmittel Katalog" id="anzahlPutzmittelkatalog" type="text" value="0" autocomplete="off" onkeyup="preisPutzmittelkatalog()"></td>
+                    <td id="w">1.00</td>
+                    <td id="w">0.0791</td>
+                    <td id="w"><input style="background-color: white;" readonly id="putzmittelkatalogGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+
+                <tr>
+                    <td>Ätherische Öle Katalog</td>
+                    <td class="anz"><input value="0" id="anzahlÖle" type="text" autocomplete="off" onkeyup="preisÖle()" name="Ätherische Öle Katalog"></td>
+                    <td>0.20</td>
+                    <td>0.033</td>
+                    <td><input readonly id="öleGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+
+                <tr>
+                    <td id="w">Preisliste A5</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Preisliste A5" id="anzalA5" type="text" value="0" autocomplete="off" onkeyup="preisA5()"></td>
+                    <td id="w">0.15</td>
+                    <td id="w">0.0085</td>
+                    <td id="w"><input style="background-color: white;" readonly id="a5GesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+
+                <tr>
+                    <td>Preisliste A5 <strong><i>ohne Namen</i>	</strong></td>
+                    <td class="anz"><input name="Preisliste A5" id="anzalA5ohne" type="text" value="0" autocomplete="off" onkeyup="preisA5ohne()"></td>
+                    <td>0.15</td>
+                    <td>0.0085</td>
+                    <td><input readonly id="a5ohneGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+                
+                <tr>
+                    <td id="w">Hautpflegeplan</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Hautpflegeplan" id="anzahlHautpflegeplan" type="text" value="0" autocomplete="off" onkeyup="preisHautpflegeplan()"></td>
+                    <td id="w">0.15</td>
+                    <td id="w">0.0085</td>
+                    <td id="w"><input style="background-color: white;" readonly  id="hautpflegeplanGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
 
                 <tr>
                     <td>Dankeschön Karten</td>
-                    <td class="anz"><input name="Dankeschön Karten" id="aa6" type="text" value="0" autocomplete="off" onkeyup="pa6()"></td>
+                    <td class="anz"><input name="Dankeschön Karten" id="anzahlDankeschönkarten" type="text" value="0" autocomplete="off" onkeyup="preisDankeschönkarten()"></td>
                     <td>0.10</td>
                     <td>0.0045</td>
-                    <td><input readonly id="A6GP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td id="w">Duftparty Karten</td>
-                    <td id="w" class="anz"><input name="Duftparty Karten" id="av" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pv()"></td>
-                    <td id="w">0.05</td>
-                    <td id="w">0.0014</td>
-                    <td id="w"><input readonly style="background-color: white;" id="VGP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td>Gutschein</td>
-                    <td class="anz"><input name="Gutschein" id="ag" type="text" value="0" autocomplete="off" onkeyup="pg()"></td>
-                    <td>0.10</td>
-                    <td>0.0045</td>
-                    <td><input readonly id="GGP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td id="w">Hautpflegeplan</td>
-                    <td id="w" class="anz"><input name="Hautpflegeplan" id="ah" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="ph()"></td>
-                    <td id="w">0.15</td>
-                    <td id="w">0.0085</td>
-                    <td id="w"><input readonly style="background-color: white;"  id="HGP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td>Koffer für ätherische Öle</td>
-                    <td class="anz"><input name="Koffer für Ätherische Öle" id="ak" type="text" value="0" autocomplete="off" onkeyup="pk()"></td>
-                    <td>39.00</td>
-                    <td>0.600</td>
-                    <td><input readonly id="KGP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td id="w">Notizblock</td>
-                    <td id="w" class="anz"><input name="Notizblock" id="an" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pn()"></td>
-                    <td id="w">2.00</td>
-                    <td id="w">0.140</td>
-                    <td id="w"><input readonly style="background-color: white;" id="NGP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td>Preisliste A5</td>
-                    <td class="anz"><input name="Preisliste A5" id="aa5" type="text" value="0" autocomplete="off" onkeyup="pa5()"></td>
-                    <td>0.15</td>
-                    <td>0.0085</td>
-                    <td><input readonly id="A5GP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td id="w">Preisliste A7</td>
-                    <td id="w" class="anz"><input name="Preisliste A7" id="aa7" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pa7()"></td>
-                    <td id="w">0.15</td>
-                    <td id="w">0.0039</td>
-                    <td id="w"><input readonly style="background-color: white;" id="A7GP" class="gpa" type="text" placeholder="0.00">€</td>
-                </tr>
-
-                <tr>
-                    <td>Proben Aufkleber</td>
-                    <td class="anz"><input name="Proben Aufkleber" id="aa" type="text" value="0" autocomplete="off" onkeyup="pa()"></td>
-                    <td>0.05</td>
-                    <td>0.0001</td>
-                    <td><input readonly id="AGP" class="gpa" type="text" placeholder="0.00">€</td>
+                    <td><input readonly id="dankeschönkarteGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
                 
                 <tr>
-                    <td id="w">Putzmittel Katalog</td>
-                    <td id="w" class="anz"><input name="Putzmittel Katalog" id="ap" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pp()"></td>
-                    <td id="w">1.00</td>
-                    <td id="w">0.0759</td>
-                    <td id="w"><input readonly style="background-color: white;" id="PGP" class="gpa" type="text" placeholder="0.00">€</td>
+                    <td id="w">Gutschein</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Gutschein" id="anzahlGutscheine" type="text" value="0" autocomplete="off" onkeyup="preisGutscheine()"></td>
+                    <td id="w">0.10</td>
+                    <td id="w">0.0045</td>
+                    <td id="w"><input style="background-color: white;" readonly id="gutscheineGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
 
                 <tr>
-                    <td>Raumduft Flyer</td>
-                    <td class="anz"><input name="Raumduft Flyer" id="ar" type="text" value="0" autocomplete="off" onkeyup="pr()"></td>
+                    <td>Muttertagskarten</td>
+                    <td class="anz"><input name="Dankeschön Karten" id="anzahlMuttertagskarten" type="text" value="0" autocomplete="off" onkeyup="preisMuttertagskarten()"></td>
                     <td>0.10</td>
-                    <td>0.0064</td>
-                    <td><input readonly id="RGP" class="gpa" type="text" placeholder="0.00">€</td>
+                    <td>0.0045</td>
+                    <td><input readonly id="muttertagskartenGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+                
+                <tr>
+                    <td id="w">Raumduft Flyer</td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Raumduft Flyer" id="anzahlRaumduftflyer" type="text" value="0" autocomplete="off" onkeyup="preisReaumduftflyer()"></td>
+                    <td id="w">0.10</td>
+                    <td id="w">0.0064</td>
+                    <td id="w"><input style="background-color: white;" readonly id="raumduftflyerGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+                
+                <tr>
+                    <td>Preisliste A7</td>
+                    <td class="anz"><input name="Preisliste A7" id="anzahlA7" type="text" value="0" autocomplete="off" onkeyup="preisA7()"></td>
+                    <td>0.15</td>
+                    <td>0.0039</td>
+                    <td><input readonly id="a7GesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
 
+                <tr>
+                    <td id="w">Preisliste A7 <strong><i>ohne Namen</i></strong></td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Preisliste A7" id="anzahlA7ohne" type="text" value="0" autocomplete="off" onkeyup="preisA7ohne()"></td>
+                    <td id="w">0.15</td>
+                    <td id="w">0.0039</td>
+                    <td id="w"><input style="background-color: white;" readonly id="a7ohneGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+
+                <tr>
+                    <td>Duftparty Karten</td>
+                    <td class="anz"><input name="Duftparty Karten" id="anzahlDuftpartyKarten" type="text" value="0" autocomplete="off" onkeyup="preisDuftpartyKarten()"></td>
+                    <td>0.05</td>
+                    <td>0.0014</td>
+                    <td><input readonly id="duftpartyKartenGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+                
                 <tr>
                     <td id="w">Testerkarten</td>
-                    <td id="w" class="anz"><input name="Testerkarten" id="at" style="background-color: white;" type="text" value="0" autocomplete="off" onkeyup="pt()"></td>
+                    <td id="w" class="anz"><input style="background-color: white;" name="Testerkarten" id="anzahlTesterkarten" type="text" value="0" autocomplete="off" onkeyup="preisTesterkarten()"></td>
                     <td id="w">0.05</td>
                     <td id="w">0.0014</td>
-                    <td id="w"><input readonly style="background-color: white;" id="TGP" class="gpa" type="text" placeholder="0.00">€</td>
+                    <td id="w"><input style="background-color: white;" readonly id="testerkartenGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
+                </tr>
+                
+                <tr>
+                    <td>Proben Aufkleber</td>
+                    <td class="anz"><input name="Proben Aufkleber" id="anzahlAufkleber" type="text" value="0" autocomplete="off" onkeyup="preisAufkleber()"></td>
+                    <td>0.05</td>
+                    <td>0.0001</td>
+                    <td><input readonly id="aufkleberGesamtPreis" class="gpa" type="text" placeholder="0.00">€</td>
                 </tr>
         </table>
         
@@ -208,6 +218,11 @@
                 <td id="t2c1">Gesamtpreis ohne Versand</td>
                 <td id="t2c2"><input required name="Gesamtpreis ohne Versand" readonly id="gppa" type="text" placeholder="0.00">€</td>
                 <td id="t2c3"></td>
+            </tr>
+
+            <tr>
+                <td id="t2c1">Zusatzgewicht der Bestellung</td>
+                <td id="t2c2"><input required name="Zusatzgewicht der Bestellung" readonly id="zgb" type="text" placeholder="0.00">kg</td>
             </tr>
 
             <tr>
@@ -268,6 +283,6 @@
         Alle Rechte vorbehalten. Änderungen können auftreten.
         <br>
         <br>
-        &copy; ShadowDevelopment 12.01.2024
+        &copy; ShadowDevelopment 21.03.2024
     </footer>
 </html>
