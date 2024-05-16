@@ -1,3 +1,4 @@
+
 function preisBestellblock() {
     //assign
     var anzahlBestellblock = document.getElementById("anzahlBestellblock");
